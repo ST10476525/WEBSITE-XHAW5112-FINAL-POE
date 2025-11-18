@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Empowering the Nation — Courses & Quotes</title>
+<meta name="description" content="Empowering the Nation — skills training for domestic workers & gardeners. Courses, quotes, contact and booking request." />
+<style>
+  /* ===========================
+     THEME & GLOBAL
+     =========================== */
+  :root{
+    --bg:#f6fbfa;
+    --card:#ffffff;
+    --primary:#0b6b58;      /* deep teal (trust + professional) */
+    --primary-2:#138a6e;    /* accent */
+    --muted:#6b7b78;
+    --accent:#ffd166;       /* warm accent for CTAs hover */
+    --danger:#d64545;
+    --glass: rgba(255,255,255,0.85);
+    --radius:14px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color-scheme: light;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background: linear-gradient(180deg,var(--bg),#e9f6f1);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    color:#0b2b29;
+    line-height:1.4;
+    padding:16px;
+  }
+/* images */
+.image-row {
+    display: flex;                  /* puts box1 and box2 in a row */
+    justify-content: center;        /* centers them horizontally */
+    align-items: center;            /* vertically aligns images */
+    gap: 20px;                      /* space between boxes */
+    margin: 30px 0;
+}
+
+.box1, .box2 {
+    background-color: #fff;         /* white background for contrast */
+    padding: 10px;
+    border-radius: 12px;            /* smooth rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);  /* shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Container to hold both boxes side by side */
+.box3, .box4 {
+  display: inline-block;         /* places them side by side */
+  width: 45%;                    /* each takes almost half the width */
+  margin: 2%;                    /* spacing between boxes */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* soft shadow */
+  border-radius: 10px;           /* rounded corners */
+  overflow: hidden;              /* keeps image corners clean */
+  vertical-align: top;           /* aligns boxes evenly */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add hover effect */
+.box3:hover, .box4:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Make images responsive */
+.responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.responsive-img {
+    max-width: 100%;
+    justify-content: right;
+    height: auto;
+    display: block;
+    border-radius: 10px; /* Matches box curve */
+}
+
+/* Hover effect for nice interaction */
+.box1:hover, .box2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+  /* App container */
+  .app{
+    max-width:980px;margin:0 auto;
+  }
+
+  header.app-header{
+    display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;
+    background:linear-gradient(90deg, rgba(11,107,88,0.12), rgba(19,138,110,0.08));
+    margin-bottom:14px;
+  }
+  /* Logo: simple SVG */
+  .logo{
+    width:64px;height:64px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--primary),var(--primary-2));
+    color:white;font-weight:700;font-size:14px;
+    flex-shrink:0;
+    box-shadow: 0 6px 18px rgba(11,107,88,0.12);
+  }
+  .brand{
+    display:flex;flex-direction:column;
+  }
+  .brand h1{margin:0;font-size:18px;letter-spacing:0.2px}
+  .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+  /* top nav / menu */
+  .topnav{display:flex;gap:8px;margin-left:auto;align-items:center}
+  .menu-btn{
+    background:transparent;border:1px solid rgba(11,107,88,0.12);padding:8px 10px;border-radius:12px;
+    display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+  }
+  .menu-btn:active{transform:translateY(1px)}
+
+  main{margin-top:12px}
+
+  /* PAGE LAYOUTS */
+  .page{display:none}
+  .page.active{display:block}
+
+  .card{
+    background:var(--card);border-radius:var(--radius);padding:14px;box-shadow:0 6px 20px rgba(13,40,36,0.06);
+    margin-bottom:12px;
+  }
+
+html, body {
+  overflow-x: hidden;
+}
+  /* Course list */
+  .courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .course-card{padding:12px;border-radius:12px;border:1px solid rgba(11,107,88,0.06)}
+  .course-title{font-weight:700;margin-bottom:8px}
+  .fee{font-weight:700;color:var(--primary)}
+
+  /* Buttons */
+  .btn{
+    background:var(--primary);color:white;border:none;padding:10px 14px;border-radius:12px;font-weight:600;
+    cursor:pointer;display:inline-flex;gap:8px;align-items:center;justify-content:center;
+  }
+  .btn.secondary{background:transparent;border:1px solid rgba(11,107,88,0.12);color:var(--primary)}
+  .btn.ghost{background:transparent;color:var(--primary-2)}
+  .btn:active{transform:translateY(1px)}
+  .btn.full{width:100%}
+
+  /* Form */
+  form .row{display:flex;flex-direction:column;margin-bottom:10px}
+  label{font-size:13px;margin-bottom:6px}
+  input[type="text"], input[type="email"], input[type="tel"], select, textarea{
+    padding:10px;border-radius:10px;border:1px solid #dfeee9;background:#fbfffd;
+    outline:none;font-size:14px;
+  }
+  .errors{color:var(--danger);font-size:13px;margin-top:6px}
+
+  /* invoice modal */
+  .invoice{
+    padding:12px;border-radius:12px;background:linear-gradient(180deg,#fcfff7,#ffffff);border:1px solid rgba(11,107,88,0.06)
+  }
+  .small{font-size:13px;color:var(--muted)}
+
+  /* back link */
+  .back{display:inline-flex;align-items:center;gap:8px;color:var(--primary-2);cursor:pointer;margin-bottom:8px}
+  .back svg{width:14px;height:14px;transform:translateX(-2px)}
+
+  /* footer */
+  footer{margin-top:18px;padding:12px;border-radius:12px;background:rgba(11,107,88,0.03);font-size:13px;color:var(--muted)}
+
+  /* responsiveness */
+  @media(min-width:900px){
+    body{padding:24px}
+    .logo{width:72px;height:72px}
+    .brand h1{font-size:20px}
+  }
+
+  /* LOADING + PAGE TRANSITIONS */
+.loader {
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  display:flex; justify-content:center; align-items:center;
+  background:white; z-index:9999;
+  animation: fadeOut 0.5s ease 0.5s forwards;
+}
+.loader span {
+  font-size:1.2rem; color:var(--primary);
+  animation: pulse 0.5s infinite;
+}
+@keyframes fadeOut { to { opacity:0; visibility:hidden; } }
+@keyframes pulse { 0%,100%{opacity:.1;} 50%{opacity:1;} }
+
+/* smooth fade-in for body and elements */
+body { opacity:0; animation: fadeIn 0.5s ease 0.5 forwards; }
+@keyframes fadeIn { to { opacity:1; } }
+
+.page, .card, .box1, .box2, .box3, .box4 {
+  opacity:0; transform:translateY(20px);
+  animation: slideIn 0.5s ease forwards;
+  animation-delay:0.5s;
+}
+@keyframes slideIn {
+  to { opacity:1; transform:translateY(-5px); }
+}
+
+</style>
+</head>
+<body>
+  <div class="loader"><span>Loading Empowering the Nation...</span></div>
+<div class="app" role="application" aria-label="Empowering the Nation web app">
+
+  <header class="app-header" role="banner">
+    <div class="logo" aria-hidden="true">
+      <!-- Simple mark + initials -->
+      <svg viewBox="0 0 100 100" width="48" height="48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0" stop-color="#0b6b58"/>
+            <stop offset="1" stop-color="#138a6e"/>
+          </linearGradient>
+        </defs>
+        <rect rx="16" width="100" height="100" fill="url(#g)"/>
+        <text x="50" y="58" font-size="36" font-weight="700" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif">EN</text>
+      </svg>
+    </div>
+
+    <div class="brand">
+      <h1>Empowering the Nation</h1>
+      <p class="small">Skills training for domestic workers & gardeners — Johannesburg</p>
+    </div>
+
+    <nav class="topnav" aria-label="Main navigation">
+      <button class="menu-btn" onclick="go('#home')" aria-label="Home">Home</button>
+      <button class="menu-btn" onclick="go('#courses-six')">6-month courses</button>
+      <button class="menu-btn" onclick="go('#courses-short')">Short courses</button>
+      <div style="width:8px"></div>
+      <div class="menu-btn" role="listbox">
+        <label for="quickmenu" class="small" style="display:none">Quick menu</label>
+        <select id="quickmenu" onchange="quickNav(this.value)" style="border:none;background:transparent;cursor:pointer">
+          <option value="">Quick menu ▼</option>
+          <option value="#contact">Contact</option>
+          <option value="#about">About</option>
+          <option value="#quote">Request Quote</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+    <section id="home" class="page active" aria-labelledby="home-title">
+      <div class="card">
+        <h2 id="home-title">Welcome — Empowering the Nation</h2>
+            <div class="box3">
+        <img src="Images/community.png" alt="Empower" class="responsive-img">
+    </div>
+             <div class="box4">
+        <img src="Images/sewing.png" alt="Empower" class="responsive-img">
+    </div>
+        <p class="small">Established in 2022 to upskill domestic workers and gardeners. We offer six-month leadership & crafts programmes and six-week short skills programmes. Our mission is to make learners more employable and enable entrepreneurship.</p>
+        <p>Hundreds trained across Johannesburg. Choose a course, request a quote, or contact us to arrange employer-specific training.</p>
+
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn" onclick="go('#courses-six')">See 6-month courses</button>
+          <button class="btn secondary" onclick="go('#courses-short')">See short courses</button>
+          <button class="btn ghost" onclick="go('#about')">About</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Why choose us?</h3>
+        <ul>
+          <li>Industry-relevant skills taught by experienced trainers.</li>
+          <li>Flexible schedules — 12 weeks (6-month programmes run across 12 weeks), short 6-week courses.</li>
+          <li>Affordable fees, group discounts and transparent quotes.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Quick course list</h3>
+        <div class="courses-grid" id="home-course-list"><!-- populated by JS --></div>
+      </div>
+    </section>
+
+    <!-- SIX MONTH COURSES -->
+    <section id="courses-six" class="page" aria-labelledby="six-title">
+      <div class="back" onclick="historyBack()" role="button" aria-label="Go back">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M15 6l-6 6 6 6"/></svg>
+        Back
+      </div>
+
+      <div class="card">
+        <h2 id="six-title">Six-month programmes (12 weeks)</h2>
+        <div class="image-row">
+    <div class="box1">
+        <img src="Images/aid2.png" alt="Empower" class="responsive-img">
+    </div>
+      <div class="box1">
+        <img src="Images/sew.png" alt="Empower" class="responsive-img">
+    </div>
+      <div class="box1">
+        <img src="Images/land2.png" alt="Empower" class="responsive-img">
+    </div>
+         <div class="box1">
+        <img src="Images/life.png" alt="Empower" class="responsive-img">
+    </div>
+</div>
+        <p class="small">These are longer leadership & vocational programmes. Fees are listed next to each course.</p>
+      </div>
+
+      <div class="courses-grid card" id="six-grid"><!-- JS populates --></div>
+    </section>
+
+    <!-- SHORT COURSES -->
+    <section id="courses-short" class="page" aria-labelledby="short-title">
+      <div class="back" onclick="historyBack()"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M15 6l-6 6 6 6"/></svg>Back</div>
+
+      <div class="card">
+        <h2 id="short-title">Short courses (6 weeks)</h2>
+              <div class="image-row">
+    <div class="box1">
+        <img src="Images/child2.png" alt="Empower" class="responsive-img">
+    </div>
+      <div class="box1">
+        <img src="Images/cooking.png" alt="Empower" class="responsive-img">
+    </div>
+      <div class="box1">
+        <img src="Images/garden3.png" alt="Empower" class="responsive-img">
+    </div>
+</div>
+        <p class="small">Choose one or more short skills courses. Fees shown.</p>
+      </div>
+
+      <div class="courses-grid card" id="short-grid"><!-- JS populates --></div>
+    </section>
+
+    <!-- COURSE DETAIL (shared) -->
+    <section id="course-detail" class="page" aria-labelledby="course-detail-title">
+      <div class="back" onclick="historyBack()"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M15 6l-6 6 6 6"/></svg>Back</div>
+      <div class="card" id="course-detail-card">
+        <h2 id="course-detail-title">Course title</h2>
+        <p id="course-detail-duration" class="small"></p>
+        <p id="course-detail-purpose"></p>
+
+        <h4>Content</h4>
+        <ul id="course-detail-content"></ul>
+
+        <p class="fee" id="course-detail-fee"></p>
+
+        <div style="margin-top:12px;display:flex;gap:8px;">
+          <button class="btn" id="add-to-form">Add to quote</button>
+          <button class="btn secondary" onclick="go('#quote')">Go to Quote Form</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE FORM / CALCULATOR -->
+    <section id="quote" class="page" aria-labelledby="quote-title">
+      <div class="back" onclick="historyBack()"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M15 6l-6 6 6 6"/></svg>Back</div>
+      <div class="card">
+        <h2 id="quote-title">Request a Quote (informal)</h2>
+        <p class="small">Select the courses you'd like, provide contact details and click <strong>Calculate Total</strong>. This produces a quoted total (including discounts & VAT). This is not a formal invoice.</p>
+
+        <form id="quote-form" novalidate onsubmit="event.preventDefault(); calculateAndShowInvoice()">
+          <div class="row">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Precious Radebe or John Doe" required />
+            <div class="errors" id="err-name" hidden></div>
+          </div>
+
+          <div class="row">
+            <label for="phone">Phone (SA) — e.g. +27 82 123 4567</label>
+            <input id="phone" name="phone" type="tel" placeholder="+27 82 123 4567" required />
+            <div class="errors" id="err-phone" hidden></div>
+          </div>
+
+          <div class="row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="precious@example.org" required />
+            <div class="errors" id="err-email" hidden></div>
+          </div>
+
+          <fieldset class="card" style="margin-bottom:12px;">
+            <legend style="font-weight:700">Choose courses</legend>
+            <div id="course-checkboxes" style="display:flex;flex-direction:column;gap:8px"></div>
+            <div class="small" style="margin-top:8px">Discounts: 1 course — no discount; 2 courses — 5%; 3 courses — 10%; &gt;3 courses — 15%.</div>
+          </fieldset>
+
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn" onclick="calculateAndShowInvoice()" type="button">Calculate Total</button>
+            <button class="btn secondary" onclick="clearForm()" type="button">Clear</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="invoice-area"></div>
+    </section>
+
+    <!-- CONTACT / MAPS -->
+    <section id="contact" class="page" aria-labelledby="contact-title">
+      <div class="back" onclick="historyBack()"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M15 6l-6 6 6 6"/></svg>Back</div>
+
+      <div class="card" id="contact-card">
+        <h2 id="contact-title">Contact & Venues</h2>
+        <p class="small">Phone, email and venues for training in Johannesburg.</p>
+
+        <ul>
+          <li><strong>Phone:</strong> +27 11 555 0123</li>
+          <li><strong>Email:</strong> precious@empoweringnation.org</li>
+        </ul>
+
+        <h3>Venues (Johannesburg)</h3>
+        <ol>
+          <li><strong>Sandton Community Centre</strong> — Sandton, Johannesburg</li>
+          <li><strong>Diepsloot Training Hall</strong> — Diepsloot, Johannesburg</li>
+          <li><strong>Soweto Skills Hub</strong> — Soweto, Johannesburg</li>
+        </ol>
+
+        <p class="small">Click a venue to open directions in Google Maps (new tab).</p>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+          <a class="btn" href="https://www.google.com/maps/search/Sandton,+Johannesburg" target="_blank" rel="noopener">Sandton directions</a>
+          <a class="btn" href="https://www.google.com/maps/search/Diepsloot,+Johannesburg" target="_blank" rel="noopener">Diepsloot</a>
+          <a class="btn" href="https://www.google.com/maps/search/Soweto,+Johannesburg" target="_blank" rel="noopener">Soweto</a>
+        </div>
+
+        <div style="margin-top:12px">
+          <h4 style="margin-bottom:8px">Map previews</h4>
+          <!-- Small map iframes, fine to load in browser -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px">
+            <iframe title="Sandton map" src="https://www.google.com/maps?q=Sandton,+Johannesburg&output=embed" style="border:0;width:100%;height:180px;border-radius:10px"></iframe>
+            <iframe title="Diepsloot map" src="https://www.google.com/maps?q=Diepsloot,+Johannesburg&output=embed" style="border:0;width:100%;height:180px;border-radius:10px"></iframe>
+            <iframe title="Soweto map" src="https://www.google.com/maps?q=Soweto,+Johannesburg&output=embed" style="border:0;width:100%;height:180px;border-radius:10px"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page" aria-labelledby="about-title">
+      <div class="back" onclick="historyBack()"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M15 6l-6 6 6 6"/></svg>Back</div>
+
+      <div class="card">
+        <h2 id="about-title">About Empowering the Nation</h2>
+<div class="image-row">
+    <div class="box1">
+        <img src="Images/empower2.png" alt="Empower" class="responsive-img">
+    </div>
+    <div class="box2">
+        <img src="Images/health.png" alt="Empower" class="responsive-img">
+    </div>
+</div>
+
+        <p class="small">Established in 2022, Empowering the Nation provides skills training to adults who had limited formal opportunities. Our goal is to increase employability and support entrepreneurship.</p>
+
+        <h4>Program structure</h4>
+        <ul>
+          <li>Six-month programmes are delivered over 12 weeks of structured learning.</li>
+          <li>Short courses run for 6 weeks and are focused on specific skills.</li>
+        </ul>
+
+        <h4>Values</h4>
+        <ul>
+          <li>Respect & dignity for every learner.</li>
+          <li>Practical, hands-on learning grounded in local needs.</li>
+          <li>Affordability and transparency.</li>
+        </ul>Our Courses
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>
+        <strong>Empowering the Nation</strong> — Skills training for domestic workers & gardeners.
+      </div>
+      <div class="small">© <span id="yr"></span> Empowering the Nation. All rights reserved.</div>
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ===========================
+   Data model (courses)
+   =========================== */
+const COURSES = [
+  // six-month courses (fee R1500)
+  {
+    id: 'first-aid',
+    title: 'First Aid',
+    fee: 1500,
+    duration: 'Six-month programme (12 weeks)',
+    type: 'six',
+    purpose: 'Provide first aid awareness & basic life support',
+    image: 'Images/aid2.png',
+    content: [
+      'Wounds and bleeding',
+      'Burns and fractures',
+      'Emergency scene management',
+      'Cardio-Pulmonary Resuscitation (CPR)',
+      'Respiratory distress & choking'
+    ]
+  },
+{
+  id: 'sewing',
+  title: 'Sewing',
+  fee: 1500,
+  duration: 'Six-month programme (12 weeks)',
+  type: 'six',
+  purpose: 'Alterations & new garment tailoring',
+ image: 'Images/sew.png',
+  content: [
+    'Types of stitches',
+    'Threading & sewing machine use',
+    'Sewing buttons, zips, hems and seams',
+    'Alterations techniques',
+    'Designing & sewing garments'
+  ]
+},
+  {
+    id: 'landscaping',
+    title: 'Landscaping',
+    fee: 1500,
+    duration: 'Six-month programme (12 weeks)',
+    type: 'six',
+    purpose: 'Landscaping services for gardens',
+    image: 'Images/landscaping.jpg',
+    content: [
+      'Indigenous & exotic plants',
+      'Fixed garden structures',
+      'Balancing plants & colours',
+      'Aesthetics and layout'
+    ]
+  },
+  {
+    id: 'life-skills',
+    title: 'Life Skills',
+    fee: 1500,
+    duration: 'Six-month programme (12 weeks)',
+    type: 'six',
+    purpose: 'Navigate basic life necessities',
+    image: 'Images/life-skills.jpg',
+    content: [
+      'Opening bank account',
+      'Basic labour law (know your rights)',
+      'Basic reading & writing',
+      'Basic numeric literacy'
+    ]
+  },
+
+  // short courses (fee R750)
+  {
+    id: 'child-minding',
+    title: 'Child Minding',
+    fee: 750,
+    duration: 'Short course (6 weeks)',
+    type: 'short',
+    purpose: 'Basic child & baby care',
+    image: 'Images/child-minding.jpg',
+    content: [
+      'Birth to 6 months needs',
+      '7 months to 1 year needs',
+      'Toddler needs',
+      'Educational toys'
+    ]
+  },
+  {
+    id: 'cooking',
+    title: 'Cooking',
+    fee: 750,
+    duration: 'Short course (6 weeks)',
+    type: 'short',
+    purpose: 'Prepare nutritious family meals',
+    image: 'Images/cooking.jpg',
+    content: [
+      'Nutritional requirements',
+      'Proteins, carbs and veg types',
+      'Meal planning',
+      'Tasty nutritious recipes'
+    ]
+  },
+  {
+    id: 'garden-maintenance',
+    title: 'Garden Maintenance',
+    fee: 750,
+    duration: 'Short course (6 weeks)',
+    type: 'short',
+    purpose: 'Watering, pruning & planting',
+    image: 'Images/garden2.png', // ✅ changed to your actual filename from screenshot
+    content: [
+      'Water restrictions & watering schedules',
+      'Pruning & propagation',
+      'Planting techniques'
+    ]
+  }
+];
+
+function makeCourseCard(course){
+  const div = document.createElement('div');
+  div.className = 'course-card';
+  div.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+      <div>
+        <div class="course-title">${escapeHtml(course.title)}</div>
+        <div class="small">${escapeHtml(course.duration)}</div> <img src="${course.image}" alt="Our bakery shop." class="responsive-img">
+      </div>
+      <div style="text-align:right">
+        <div class="fee">R ${course.fee.toLocaleString()}</div>
+        <div class="small" style="margin-top:6px">
+          <button class="btn secondary" onclick="openDetail('${course.id}')">Details</button>
+        </div>
+      </div>
+    </div>
+  `;
+  return div;
+}
+
+
+
+
+/* ===========================
+   Utility functions
+   =========================== */
+
+/**
+* Safe numeric addition & multiplication using integers (Rands are integers)
+* We will compute VAT and discounts precisely using integer arithmetic (cents not needed as fees are whole rands).
+* If fractional currency appears, convert to cents (multiply by 100), operate then divide.
+*/
+function roundToTwo(num){ return Math.round(num*100)/100; }
+
+/* ===========================
+   Routing
+   =========================== */
+function showPage(hash){
+  // default to #home
+  if(!hash) hash = '#home';
+  // hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.querySelector(hash);
+  if(el) el.classList.add('active');
+  // store history for "back"
+  if(location.hash !== hash){
+    history.pushState({page:hash}, '', hash);
+  }
+  // extra UI updates
+  if(hash === '#home') populateHomeList();
+}
+window.addEventListener('popstate', (e) => {
+  const h = location.hash || '#home';
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.querySelector(h);
+  if(el) el.classList.add('active');
+});
+function go(hash){
+  if(!hash) hash = '#home';
+  showPage(hash);
+}
+function historyBack(){ history.back(); }
+
+/* quick menu handler */
+function quickNav(val){
+  if(val) go(val);
+  // reset select to placeholder
+  setTimeout(()=>document.getElementById('quickmenu').value = '', 100);
+}
+
+/* ===========================
+   Populate UI lists
+   =========================== */
+function makeCourseCard(course){
+  const div = document.createElement('div');
+  div.className = 'course-card';
+  div.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+      <div>
+        <div class="course-title">${escapeHtml(course.title)}</div>
+        <div class="small">${escapeHtml(course.duration)}</div>
+      </div>
+      <div style="text-align:right">
+        <div class="fee">R ${course.fee.toLocaleString()}</div>
+        <div class="small" style="margin-top:6px"><button class="btn secondary" onclick="openDetail('${course.id}')">Details</button></div>
+      </div>
+    </div>
+  `;
+  return div;
+}
+
+function populateHomeList(){
+  const container = document.getElementById('home-course-list');
+  container.innerHTML = '';
+  // show a short list of popular courses
+  const sample = COURSES.slice(0,6);
+  sample.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `<strong>${escapeHtml(c.title)}</strong><div class="small">${escapeHtml(c.duration)} — R ${c.fee.toLocaleString()}</div>`;
+    card.onclick = () => openDetail(c.id);
+    card.style.cursor = 'pointer';
+    container.appendChild(card);
+  });
+}
+
+function populateCourseGrids(){
+  const sixGrid = document.getElementById('six-grid');
+  const shortGrid = document.getElementById('short-grid');
+  sixGrid.innerHTML = '';
+  shortGrid.innerHTML = '';
+  COURSES.forEach(c => {
+    const card = makeCourseCard(c);
+    if(c.type === 'six') sixGrid.appendChild(card);
+    else shortGrid.appendChild(card);
+  });
+}
+
+function openDetail(id){
+  const c = COURSES.find(x => x.id === id);
+  if(!c) return alert('Course not found');
+  document.getElementById('course-detail-title').textContent = c.title;
+  document.getElementById('course-detail-duration').textContent = c.duration;
+  document.getElementById('course-detail-purpose').textContent = c.purpose;
+  const ul = document.getElementById('course-detail-content');
+  ul.innerHTML = '';
+  c.content.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    ul.appendChild(li);
+  });
+  document.getElementById('course-detail-fee').textContent = 'Fee: R ' + c.fee.toLocaleString();
+  // add to "add to form" button
+  document.getElementById('add-to-form').onclick = function(){
+    addCourseToForm(c.id);
+    go('#quote');
+  };
+  go('#course-detail');
+}
+
+/* ===========================
+   Quote form: checkboxes & validation
+   =========================== */
+function populateCourseCheckboxes(){
+  const cb = document.getElementById('course-checkboxes');
+  cb.innerHTML = '';
+  COURSES.forEach(c => {
+    const id = 'cb-'+c.id;
+    const wrapper = document.createElement('label');
+    wrapper.style.display = 'flex';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.gap = '8px';
+    wrapper.style.cursor = 'pointer';
+    wrapper.innerHTML = `
+      <input type="checkbox" id="${id}" data-course-id="${c.id}" style="width:18px;height:18px" />
+      <div style="flex:1">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div><strong>${escapeHtml(c.title)}</strong> <span class="small">(${escapeHtml(c.duration)})</span></div>
+          <div class="fee">R ${c.fee.toLocaleString()}</div>
+        </div>
+        <div class="small" style="color:var(--muted)">${escapeHtml(c.purpose)}</div>
+      </div>
+    `;
+    cb.appendChild(wrapper);
+  });
+}
+
+/* add course to the form selection: checks the box */
+function addCourseToForm(courseId){
+  const checkbox = document.querySelector(`[data-course-id="${courseId}"]`);
+  if(checkbox) checkbox.checked = true;
+}
+
+/* form validation */
+function validateForm(){
+  let ok = true;
+  // clear old errors
+  document.querySelectorAll('.errors').forEach(e => { e.hidden=true; e.textContent=''; });
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if(name.length < 3){ ok=false; showError('err-name','Please enter your full name (min 3 characters).'); }
+  // basic SA phone check: allow +27 or 0 and digits; minimal validation
+  const phoneNorm = phone.replace(/\s+/g,'');
+  if(!/^(?:\+27|0)[0-9]{9,12}$/.test(phoneNorm)){
+    ok=false; showError('err-phone','Enter a valid South African phone number. Example: +27 82 123 4567');
+  }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    ok=false; showError('err-email','Enter a valid email address.');
+  }
+  const selected = getSelectedCourses();
+  if(selected.length === 0){
+    ok=false;
+    alert('Please select at least one course so we can provide a quote.');
+  }
+  return ok;
+}
+function showError(elId, msg){
+  const e = document.getElementById(elId);
+  if(e){ e.hidden=false; e.textContent = msg; }
+}
+function getSelectedCourses(){
+  const checked = Array.from(document.querySelectorAll('#course-checkboxes input[type="checkbox"]:checked'));
+  return checked.map(ch => ch.getAttribute('data-course-id')).map(id => COURSES.find(c => c.id === id)).filter(Boolean);
+}
+
+/* ===========================
+   Discount & VAT calculation
+   ===========================
+   Rules:
+   - 1 course: 0% discount
+   - 2 courses: 5% discount
+   - 3 courses: 10% discount
+   - >3 courses: 15% discount
+   VAT 15% applied on (subtotal after discount)
+   We'll calculate precisely and show breakdown.
+   =========================== */
+
+function computeDiscountRate(n){
+  if(n <= 1) return 0.0;
+  if(n === 2) return 0.05;
+  if(n === 3) return 0.10;
+  return 0.15;
+}
+
+function calculateTotals(selectedCourses){
+  // selectedCourses: array of course objects
+  // sum fees
+  const subtotal = selectedCourses.reduce((sum,c) => sum + Number(c.fee), 0);
+  const n = selectedCourses.length;
+  const discountRate = computeDiscountRate(n);
+  const discountAmount = roundToTwo(subtotal * discountRate);
+  const afterDiscount = roundToTwo(subtotal - discountAmount);
+  const vat = roundToTwo(afterDiscount * 0.15); // 15%
+  const total = roundToTwo(afterDiscount + vat);
+  return {
+    count: n,
+    subtotal,
+    discountRate,
+    discountAmount,
+    afterDiscount,
+    vat,
+    total
+  };
+}
+
+/* ===========================
+   Invoice display
+   =========================== */
+function calculateAndShowInvoice(){
+  if(!validateForm()) return;
+  const selected = getSelectedCourses();
+  const totals = calculateTotals(selected);
+  // Create invoice HTML
+  const invoiceArea = document.getElementById('invoice-area');
+  const name = escapeHtml(document.getElementById('name').value.trim());
+  const phone = escapeHtml(document.getElementById('phone').value.trim());
+  const email = escapeHtml(document.getElementById('email').value.trim());
+
+  const itemsHtml = selected.map(c=>`<li>${escapeHtml(c.title)} — R ${Number(c.fee).toLocaleString()}</li>`).join('');
+
+  invoiceArea.innerHTML = `
+    <div class="card invoice" role="region" aria-label="Quote invoice">
+      <h3>Informal Quote</h3>
+      <div class="small">This is a quoted amount for ${totals.count} course(s). Not a formal invoice.</div>
+      <hr style="margin:12px 0;border:none;border-top:1px solid rgba(11,107,88,0.06)" />
+      <div><strong>Client:</strong> ${name}</div>
+      <div class="small">${phone} • ${email}</div>
+      <h4 style="margin-top:8px">Selected Courses</h4>
+      <ul>${itemsHtml}</ul>
+      <div style="display:flex;justify-content:space-between;gap:12px;margin-top:12px">
+        <div class="small">Subtotal</div><div>R ${totals.subtotal.toLocaleString()}</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:12px">
+        <div class="small">Discount (${Math.round(totals.discountRate*100)}%)</div><div>- R ${totals.discountAmount.toLocaleString()}</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:12px">
+        <div class="small">After Discount</div><div>R ${totals.afterDiscount.toLocaleString()}</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:12px">
+        <div class="small">VAT (15%)</div><div>R ${totals.vat.toLocaleString()}</div>
+      </div>
+      <hr style="margin:12px 0;border:none;border-top:1px solid rgba(11,107,88,0.06)" />
+      <div style="display:flex;justify-content:space-between;gap:12px;font-weight:700">
+        <div>Total (quoted)</div><div>R ${totals.total.toLocaleString()}</div>
+      </div>
+
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="btn" onclick="submitQuote()">Request consultant contact</button>
+        <button class="btn secondary" onclick="printInvoice()">Print / Save</button>
+      </div>
+      <div class="small" style="margin-top:8px;color:var(--muted)">A consultant will contact you to finalize registration. This quote includes discounts and 15% VAT and is only an example quote.</div>
+    </div>
+  `;
+  // scroll invoice into view on mobile
+  invoiceArea.scrollIntoView({behavior:'smooth'});
+}
+
+/* Dummy submit (would normally send to server) */
+function submitQuote(){
+  // Simulate sending request — since we must not run background tasks, just show confirmation
+  alert('Thank you — your quote request has been recorded. A consultant will contact you on the contact details you provided.');
+  // Optionally clear selections
+  // clearForm();
+}
+
+/* Print/save */
+function printInvoice(){
+  window.print();
+}
+
+/* Clear form */
+function clearForm(){
+  document.getElementById('quote-form').reset();
+  document.getElementById('invoice-area').innerHTML = '';
+}
+
+/* ===========================
+   Helpers
+   =========================== */
+function escapeHtml(s){
+  if(!s && s !== 0) return '';
+  return String(s).replace(/[&<>"']/g, function(m){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]; });
+}
+
+/* ===========================
+   Small UX niceties & init
+   =========================== */
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+function init(){
+  populateCourseGrids();
+  populateCourseCheckboxes();
+  populateHomeList();
+
+  // hash routing
+  if(location.hash) showPage(location.hash);
+  else showPage('#home');
+
+  // keyboard accessibility: escape key to go home
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape') go('#home');
+  });
+}
+init();
+
+/* ===========================
+   Simple type-checking error handling
+   =========================== */
+// Validate input types on blur
+document.getElementById('phone').addEventListener('blur', (e) => {
+  const v = e.target.value.trim();
+  const norm = v.replace(/\s+/g,'');
+  if(norm && !/^(?:\+27|0)[0-9]{9,12}$/.test(norm)){
+    document.getElementById('err-phone').hidden = false;
+    document.getElementById('err-phone').textContent = 'Phone seems invalid (expected +27 or 0 start).';
+  } else {
+    document.getElementById('err-phone').hidden = true;
+  }
+});
+document.getElementById('email').addEventListener('blur', (e)=> {
+  const v = e.target.value.trim();
+  if(v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
+    document.getElementById('err-email').hidden = false;
+    document.getElementById('err-email').textContent = 'Enter a valid email.';
+  } else {
+    document.getElementById('err-email').hidden = true;
+  }
+});
+document.getElementById('name').addEventListener('blur', (e)=>{
+  if(e.target.value.trim().length < 3){
+    document.getElementById('err-name').hidden = false;
+    document.getElementById('err-name').textContent = 'Please enter your full name.';
+  } else {
+    document.getElementById('err-name').hidden = true;
+  }
+});
+
+/* When user selects quickmenu via keyboard, reset after small delay */
+document.getElementById('quickmenu').addEventListener('change', function(){ quickNav(this.value) });
+// Delay showing each page when navigating
+function go(hash){
+  if(!hash) hash = '#home';
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.querySelector(hash);
+  if(!el) return;
+  // add small fade delay to simulate load
+  el.style.opacity = 0;
+  setTimeout(()=>{ 
+    el.classList.add('active'); 
+    el.style.transition = 'opacity 2s';
+    el.style.opacity = 1;
+  }, 1000); // 5s delay
+}
+
+</script>
+</span></div>
+</body>
+</html>
